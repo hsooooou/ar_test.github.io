@@ -30,7 +30,7 @@
     </a-assets>
 
     <!-- マーカーの.pattファイルを読み込む -->
-    <a-marker type="pattern" url="./pattern-marker.patt">
+    <a-marker type="pattern" url="./pattern-QR_test_movie.patt">
       <!-- モデルを呼び出す -->
       <a-video gltf-model="#video" width="2.6" height="1.4" position="0 0 0"
       roatation="270 0 0" play="true"></a-video>
@@ -40,6 +40,12 @@
     <a-entity camera></a-entity>
   </a-scene>
 
+  <script>
+    window.addEventListener('click', function () {
+    var v = document.querySelector('#video');
+    v.play();
+    });
+  </script>
 </body>
 
 </html>
