@@ -5,7 +5,7 @@
   <body style="margin : 0px; overflow: hidden;">
     
     <a-assets>
-	    <video id="3d-video" autoplay loop="true" muted="true" src="./ホログラム.mp4"></video>
+	    <video id="ar-video" autoplay loop="true" muted="true" src="./hologram.mp4"></video>
 	  </a-assets>
 
 	  <!-- デバッグ用の画面表示、VR用のボタンをそれぞれ非表示に -->
@@ -13,7 +13,7 @@
       
       <!-- 今回作成した『.patt』ファイルを読み込む -->
       <a-marker type="pattern" url="./pattern-QR_test_movie.patt">
-	      <a-video src="#3d-video" width="2.6" height="1.4" position="0 0 0" rotation="270 0 0" play="true"></a-video>
+	      <a-video src="#ar-video" width="2.6" height="1.4" position="0 0 0" rotation="270 0 0" play="true"></a-video>
       </a-marker>
       
       <a-entity camera></a-entity>
@@ -22,7 +22,7 @@
     
     <script>
       window.addEventListener('click', function () {
-      var v = document.querySelector('#3d-video');
+      var v = document.querySelector('#ar-video');
       v.play();
       });
     </script>
