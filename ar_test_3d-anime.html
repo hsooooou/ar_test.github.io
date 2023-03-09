@@ -11,13 +11,13 @@
 
 <body style="margin : 0px; overflow: hidden;">
 
-  <a-assets>
-    <a-asset-item id="ar-video" src="./walk-bot.glb"></a-asset-item>
-  </a-assets>
-
   <!-- デバッグ用の画面表示、VR用のボタンをそれぞれ非表示に -->
   <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false">
 
+    <a-assets>
+      <a-asset-item id="ar-video" src="./walk-bot.glb"></a-asset-item>
+    </a-assets>
+  
     <!-- 今回作成した『.patt』ファイルを読み込む -->
     <a-marker type="pattern" url="./pattern-QR_test_movie.patt">
       <a-entity gltf-model="#ar-video" animation-mixer></a-entity>
@@ -27,12 +27,6 @@
 
   </a-scene>
 
-  <script>
-    window.addEventListener('click', function () {
-      var v = document.querySelector('#ar-video');
-      v.play();
-    });
-  </script>
 </body>
 
 </html>
