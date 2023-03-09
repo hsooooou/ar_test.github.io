@@ -1,51 +1,30 @@
-<!DOCTYPE html>
-<html lang="ja">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- A-Frame を読み込む -->
-  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-  <!-- AR.js を読み込む -->
-  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  <title>＿</title>
-
-</head>
-
-<body style="margin: 0; overflow: hidden">
-
-  <header>
-    <h1></h1>
-  </header>
-
-  <!-- A-FrameにAR.jsを紐づけ、VRボタン非表示、深度バッファ追加 -->
-  <a-scene embedded arjs vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;">
-
-    <!-- 動画を読み込む -->
+<!doctype HTML>
+<html>
+<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.7/aframe/build/aframe-ar.js"></script>
+  <body style="margin : 0px; overflow: hidden;">
+    
     <a-assets>
-      <video id="video" autoplay loop="true" muted="true" src="./ar_test_movie.mp4" >
-      </video>
-    </a-assets>
+	    <video id="ar-video" autoplay loop="true" muted="true" src="./ar_test_movie.mp4"></video>
+	  </a-assets>
 
-    <!-- マーカーの.pattファイルを読み込む -->
-    <a-marker type="pattern" url="./pattern-QR_test_movie.patt">
-      <!-- モデルを呼び出す -->
-      <a-video gltf-model="#video" width="2.6" height="1.4" position="0 0 0"
-      roatation="270 0 0" play="true"></a-video>
-    </a-marker>
-
-    <!-- カメラを追加 -->
-    <a-entity camera></a-entity>
-  </a-scene>
-
-  <script>
-    window.addEventListener('click', function () {
-    var v = document.querySelector('#video');
-    v.play();
-    });
-  </script>
-</body>
-
+	  <!-- デバッグ用の画面表示、VR用のボタンをそれぞれ非表示に -->
+    <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false">
+      
+      <!-- 今回作成した『.patt』ファイルを読み込む -->
+      <a-marker type="pattern" url="./pattern-QR_test_movie.patt">
+	      <a-video src="#ar-video" width="2.6" height="1.4" position="0 0 0" rotation="270 0 0" play="true"></a-video>
+      </a-marker>
+      
+      <a-entity camera></a-entity>
+    
+    </a-scene>
+    
+    <script>
+      window.addEventListener('click', function () {
+      var v = document.querySelector('#ar-video');
+      v.play();
+      });
+    </script>
+  </body>
 </html>
