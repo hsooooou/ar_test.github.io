@@ -18,12 +18,15 @@
 
     <a-assets>
       <a-asset-item id="shooter" src="./s-shooter.glb"></a-asset-item>
+      <a-asset-item id="click"><input type="checkbox" class="boxclick">
+      <div class="nakami"><p>なかみ</p></div></a-asset-item>
     </a-assets>
   
     <!-- 今回作成した『.patt』ファイルを読み込む -->
     <a-marker type="pattern" url="./pattern-QR_test_movie.patt">
       <a-entity gltf-model="#shooter" animation-mixer rotation="-90 0 0"
       link="href :./index.html ;title: home; image: #shooter"></a-entity>
+      <a-entity gltf-model="click"></a-entity>
     </a-marker>
 
     <a-entity camera></a-entity>
