@@ -18,7 +18,7 @@
 
     <a-assets>
       <a-asset-item id="shooter" src="./s-shooter.glb"></a-asset-item>
-      <img id="icon" src="./pattern-QR_test_movie.png" />
+      <a-entity id="text" text="value: Hello World;"></a-entity>
     </a-assets>
   
     <!-- 今回作成した『.patt』ファイルを読み込む -->
@@ -26,8 +26,8 @@
       <a-entity gltf-model="#shooter" animation-mixer rotation="-90 0 0"
       link="href :./index.html ;title: home; image: #shooter"></a-entity>
       
-      <a-entity gltf-model="#icon" animation-mixer rotation="-90 0 0"  position="100 100 100"  
-      link="href :./index.html ;title: home; image: #icon"></a-entity>
+      <a-entity gltf-model="#text" animation-mixer rotation="-90 0 0"  position="10 10 10"  
+      link="href :./index.html ;title: home; image: #text"></a-entity>
     
 
     </a-marker>
