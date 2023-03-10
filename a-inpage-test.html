@@ -22,16 +22,18 @@
 </head>
 
 <body>
-  <div id="test">
-      <h3>test</h3>
-  </div>
-
+  
   <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false">
       <a-marker preset="hiro">
           <a-plane width="1" height="1" rotation="-90 0 0" material="shader:html; target: #test"></a-plane>
       </a-marker>
       <a-entity camera></a-entity>
   </a-scene>
-</body>s
+
+  <div id="test">
+    <h3>test</h3>
+</div>
+
+</body>
 
 </html>
