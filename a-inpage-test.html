@@ -21,28 +21,17 @@
   </style>
 </head>
 
-<body style="margin : 0px; overflow: hidden;">
-
+<body>
   <div id="test">
-    <a href="./home.html">ホームに戻る？</a>
+      <h3>test</h3>
   </div>
 
-  <!-- デバッグ用の画面表示、VR用のボタンをそれぞれ非表示に -->
   <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false">
-
-    <a-assets>
-
-    </a-assets>
-
-    <!-- 今回作成した『.patt』ファイルを読み込む -->
-    <a-marker type="pattern" url="./pattern-QR_test_movie.patt">
-      <a-plane width="1" height="1" rotation="-90 0 0" material="shader:html; target: #test"></a-plane>
-    </a-marker>
-
-    <a-entity camera></a-entity>
-
+      <a-marker preset="hiro">
+          <a-plane width="1" height="1" rotation="-90 0 0" material="shader:html; target: #test"></a-plane>
+      </a-marker>
+      <a-entity camera></a-entity>
   </a-scene>
-
-</body>
+</body>s
 
 </html>
