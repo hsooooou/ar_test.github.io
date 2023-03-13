@@ -23,6 +23,11 @@
 
 <body>
   
+  <!-- テスト -->
+  <a-scene> <a-assets> <img id="homeThumbnail" src="./pattern-QR_test_movie.png"> </a-assets>
+    <a-entity link="href: index.html; title: マイ ホームページ; image: #homeThumbnail"> </a-entity>
+  </a-scene>
+  
   <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false">
       <a-marker preset="hiro">
           <a-plane width="1" height="1" rotation="-90 0 0" material="shader:html; target: #test"></a-plane>
