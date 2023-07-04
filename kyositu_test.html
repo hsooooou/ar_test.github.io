@@ -13,6 +13,8 @@
   <title>グラフ
   </title>
 
+<!-- aframe-orbit-controlsをCDNから読み込む -->
+    <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script>
   <!-- カメラの初期設定変更　これでみやすくなる？ -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi" />
 </head>
@@ -26,13 +28,13 @@
 
     <!-- 3DCGモデルを読み込む -->
     <a-assets>
-      <a-asset-item id="box" src="./kyositu.glb"></a-asset-item>
+      <a-asset-item id="box" src="./koysitu.glb"></a-asset-item>
     </a-assets>
 
     <!-- マーカーの.pattファイルを読み込む -->
     <a-marker type="pattern" url="./pattern-marker.patt">
       <!-- 3Dモデルを呼び出す 表示設定はここ-->
-      <a-entity gltf-model="#box" scale="0.05 0.05 0.05"></a-entity>
+      <a-entity gltf-model="#box" scale="0.2 0.2 0.2"></a-entity>
     </a-marker>
 
     <!-- カメラを追加 -->
